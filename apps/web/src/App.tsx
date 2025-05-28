@@ -1,3 +1,10 @@
+import Forge from './Forge'
+
 export default function App() {
-  return <h1>Hello Forge</h1>
+  return (
+    <div>
+      <h1>Hello Forge</h1>
+      <Forge />
+    </div>
+  )
 }
