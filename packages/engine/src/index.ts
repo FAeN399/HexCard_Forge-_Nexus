@@ -31,3 +31,4 @@ export function forgeCharacter(cards: HexCard[], name: string): Character {
 }
 
 export { generateBooster } from './booster'
+export { fuse } from './fuse'

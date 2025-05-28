@@ -8,8 +8,8 @@
     "packages/*"
   ],
   "scripts": {
-    "dev:web": "pnpm --filter web dev",
-    "dev:desktop": "pnpm --filter desktop dev",
+    "dev:web": "pnpm --filter web-client dev",
+    "dev:desktop": "pnpm --filter desktop-studio dev",
     "test": "pnpm -r test"
   }
 }
