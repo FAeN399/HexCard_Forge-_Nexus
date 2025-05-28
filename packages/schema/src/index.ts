@@ -100,6 +100,19 @@ export const ShipDefinition = z.object({
   parts: z.array(ShipPart)
 })
 
+export const Character = z.object({
+  id: z.string().uuid(),
+  name: z.string(),
+  totalPower: z.number(),
+  cardIds: z.array(z.string().uuid()).length(6)
+})
+
+export const Ship = z.object({
+  id: z.string().uuid(),
+  name: z.string(),
+  partIds: z.array(z.string().uuid()).length(6)
+})
+
 export const MapTile = z.object({
   q: z.number().int(),
   r: z.number().int(),
@@ -124,6 +137,8 @@ export type StructureType = z.infer<typeof StructureType>
 export type ShipPartType = z.infer<typeof ShipPartType>
 export type ShipPart = z.infer<typeof ShipPart>
 export type ShipDefinition = z.infer<typeof ShipDefinition>
+export type Character = z.infer<typeof Character>
+export type Ship = z.infer<typeof Ship>
 export type Terrain = z.infer<typeof Terrain>
 export type MapTile = z.infer<typeof MapTile>
 export type NetMessage = z.infer<typeof NetMessage>
@@ -141,6 +156,8 @@ export {
   ShipPartType,
   ShipPart,
   ShipDefinition,
+  Character,
+  Ship,
   MapTile,
   NetMessage
 }

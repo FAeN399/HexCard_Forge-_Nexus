@@ -1,9 +1,20 @@
 # HexCard Forge - Nexus
 
-Initial monorepo setup using pnpm workspaces. This repo contains:
+Hybrid desktop & web toolkit for building and playing a hex‑card strategy game.  
+This monorepo uses **pnpm workspaces** to share code across apps and packages.
 
-- `apps/web` – browser application
-- `apps/desktop` – Tauri desktop wrapper
-- `packages/schema` – shared Zod schema
+## Workspaces
+- `apps/desktop-studio` – Tauri shell with React DM Studio
+- `apps/web-client` – Browser client
+- `packages/engine` – core game/forge logic
+- `packages/schema` – Zod data models
+- `packages/network` – WebSocket helpers
+- `packages/ui` – shared React components
 
-Run `pnpm install` then `pnpm dev:web` to start the web app.
+## Development
+Run `pnpm install` then:
+
+- `pnpm dev:desktop` – start the DM Studio
+- `pnpm dev:web` – start the browser client
+
+To package the desktop app run `pnpm --filter desktop-studio tauri build`.
