@@ -43,10 +43,63 @@ export const BoosterPack = z.object({
   cards: z.array(HexCard)
 })
 
+export const Theme = z.enum(['fantasy', 'sci-fi'])
+
+export const TerrainType = z.object({
+  id: z.string().uuid(),
+  name: z.string(),
+  movementCost: z.number().min(0),
+  resourceOutput: z.number().min(0).optional(),
+  color: z.string().optional(),
+  texture: z.string().optional(),
+  theme: Theme
+})
+
+export const StructureType = z.object({
+  id: z.string().uuid(),
+  name: z.string(),
+  attributes: z.record(z.any()).default({}),
+  theme: Theme
+})
+
+export const ShipPartType = z.enum([
+  'hull',
+  'engine',
+  'weapon',
+  'cargo',
+  'utility'
+])
+
+export const ShipPart = z.object({
+  id: z.string().uuid(),
+  name: z.string(),
+  type: ShipPartType,
+  stats: z.object({
+    speed: z.number().optional(),
+    defense: z.number().optional(),
+    cargo: z.number().optional(),
+    attack: z.number().optional()
+  }).default({}),
+  skin: z.string().optional(),
+  theme: Theme.optional()
+})
+
+export const ShipDefinition = z.object({
+  id: z.string().uuid(),
+  name: z.string(),
+  parts: z.array(ShipPart)
+})
+
 export type EdgeIcon = z.infer<typeof EdgeIcon>
 export type CardType = z.infer<typeof CardType>
 export type Rarity = z.infer<typeof Rarity>
 export type HexCard = z.infer<typeof HexCard>
 export type BoosterPack = z.infer<typeof BoosterPack>
+export type Theme = z.infer<typeof Theme>
+export type TerrainType = z.infer<typeof TerrainType>
+export type StructureType = z.infer<typeof StructureType>
+export type ShipPartType = z.infer<typeof ShipPartType>
+export type ShipPart = z.infer<typeof ShipPart>
+export type ShipDefinition = z.infer<typeof ShipDefinition>
 
 export {}
