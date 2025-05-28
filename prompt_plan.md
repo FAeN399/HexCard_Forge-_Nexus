@@ -120,7 +120,27 @@ Implement global store.
 Provide updated code + tests.
 ```
 
-*(…continue prompts for every chunk C1-3 through C8-3 in sequence, each inside a `prompt` block with tasks + TDD criteria …)*
+### Prompt #5 — **C1-3** Native Save/Load Service
+
+```prompt
+# Context
+- Backend uses Tauri commands located under `src-tauri/src`.
+- Front-end communicates via `@tauri-apps/api/tauri`.
+- Zustand store with persistence already exists.
+
+# Tests
+1. `src-tauri/tests/save_load.rs` writes JSON with `save_state` then reads it back using `load_state`.
+2. `apps/web/src/useFileIO.test.ts` mocks `invoke` and asserts wrapper calls.
+
+# Tasks
+1. Implement async `save_state(Json<String>)` and `load_state() -> Json<String>` in Rust.
+2. Register the commands with `tauri::Builder`.
+3. Add hook `useFileIO()` in `packages/engine/src/useFileIO.ts` that wraps `invoke` calls.
+4. Ensure everything is non-blocking and works across macOS, Windows, and Linux.
+
+Return a git-style diff with tests first.
+# END
+```
 
 ---
 
