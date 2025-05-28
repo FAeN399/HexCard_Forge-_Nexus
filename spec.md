@@ -126,7 +126,8 @@ export const SaveGame = z.object({
 ### 5.2 Forge
 
 * 3-D crucible table.
-* Drag six cards onto sockets → live preview stats.
+* Drag six cards onto **hexagonal sockets arranged around a central circle**
+  → live preview stats.
 * Click *Forge* → character created & pushed into `forged[]`.
 * AI Suggest button: calls local rule-of-thumb generator.
 
