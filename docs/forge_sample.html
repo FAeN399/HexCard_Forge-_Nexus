@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forge UI Sample</title>
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; display:flex; height:100vh; }
+    aside { width:70px; background:#222; color:#fff; display:flex; flex-direction:column; align-items:center; padding-top:1rem; }
+    aside div { margin:1rem 0; cursor:pointer; }
+    main { flex:1; display:flex; justify-content:center; align-items:center; background:#eee; }
+    .slot-grid { display:grid; grid-template-columns:repeat(3,80px); grid-template-rows:repeat(3,80px); gap:10px; }
+    .hex { width:80px; height:80px; background:#444; clip-path:polygon(50% 0%,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:bold; }
+    button { display:block; margin:1rem auto 0; padding:0.5rem 1rem; font-size:1rem; }
+  </style>
+</head>
+<body>
+  <aside>
+    <div>Forge</div>
+    <div>Map</div>
+    <div>Play</div>
+  </aside>
+  <main>
+    <div>
+      <div class="slot-grid">
+        <div class="hex">1</div>
+        <div class="hex">2</div>
+        <div class="hex">3</div>
+        <div class="hex">4</div>
+        <div class="hex">5</div>
+        <div class="hex">6</div>
+      </div>
+      <button>Forge Character</button>
+    </div>
+  </main>
+</body>
+</html>
