@@ -1,0 +1,8 @@
+{
+  "name": "desktop",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "echo 'desktop dev stub'"
+  }
+}
