@@ -45,6 +45,16 @@ export const BoosterPack = z.object({
 
 export const Theme = z.enum(['fantasy', 'sci-fi'])
 
+export const Terrain = z.enum([
+  'plains',
+  'forest',
+  'mountain',
+  'water',
+  'desert',
+  'swamp',
+  'city'
+])
+
 export const TerrainType = z.object({
   id: z.string().uuid(),
   name: z.string(),
@@ -90,6 +100,19 @@ export const ShipDefinition = z.object({
   parts: z.array(ShipPart)
 })
 
+export const MapTile = z.object({
+  q: z.number().int(),
+  r: z.number().int(),
+  terrain: Terrain,
+  occupantId: z.string().uuid().optional()
+})
+
+export const NetMessage = z.object({
+  type: z.string(),
+  payload: z.any(),
+  seq: z.number().int()
+})
+
 export type EdgeIcon = z.infer<typeof EdgeIcon>
 export type CardType = z.infer<typeof CardType>
 export type Rarity = z.infer<typeof Rarity>
@@ -101,5 +124,23 @@ export type StructureType = z.infer<typeof StructureType>
 export type ShipPartType = z.infer<typeof ShipPartType>
 export type ShipPart = z.infer<typeof ShipPart>
 export type ShipDefinition = z.infer<typeof ShipDefinition>
+export type Terrain = z.infer<typeof Terrain>
+export type MapTile = z.infer<typeof MapTile>
+export type NetMessage = z.infer<typeof NetMessage>
 
-export {}
+export {
+  EdgeIcon,
+  CardType,
+  Rarity,
+  HexCard,
+  BoosterPack,
+  Theme,
+  Terrain,
+  TerrainType,
+  StructureType,
+  ShipPartType,
+  ShipPart,
+  ShipDefinition,
+  MapTile,
+  NetMessage
+}
