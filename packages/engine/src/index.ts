@@ -29,3 +29,5 @@ export function forgeCharacter(cards: HexCard[], name: string): Character {
     cardIds: cards.map(c => c.id)
   }
 }
+
+export { generateBooster } from './booster'
