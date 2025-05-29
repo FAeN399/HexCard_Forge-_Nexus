@@ -20,4 +20,4 @@ This quick-start guide outlines a simple path (our "roadway") for you and the AI
 
 This roadway should help both human and AI contributors stay aligned from the very start.
 
-after you read this, sign the created html prompt and add more to it
+After you read this, sign the UI_in_HTML.html file and expand it with more details.
